@@ -1,0 +1,30 @@
+header{
+    background-color: #222222;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    flex-wrap: wrap;
+}
+
+p{
+    font-size: 1.6rem;
+    color: #f7f7f7;
+}
+
+
+.link-group{
+    display: flex;
+    gap: 30px;
+}
+
+.link-group p:hover, header > p:hover{
+    cursor: pointer;
+
+}
+
+header > p, .link-group{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
