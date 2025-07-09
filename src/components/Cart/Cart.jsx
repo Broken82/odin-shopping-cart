@@ -1,17 +1,30 @@
+import { useOutletContext } from 'react-router-dom'
 import styles from './cart.module.css'
 
 export default function Cart(){
+    const [items, setItems] = useOutletContext()
     return(
-        <div className="cart">
-            <div className="cart-list">
-                <div className="cart-item">
-                    <img src="" alt="Item" />
-                    <p>Laptop</p>
+        <div className={styles.cart}>
+            <div className={styles['cart-list']}>
+
+                {items.map(item =>{
+                    return(
+                <div className={styles['cart-item']}>
+                    <img className={styles['img-cart']} src={item.image} alt={item.title} />
+                    <div className={styles.namebox}>
+                        <p className={styles.title}>{item.title}</p>
+                    </div>
+                    <p className={styles.price}>${item.price}</p>
                     <input type="number" value={2} />
-                    <p>$50</p>
                 </div>
+
+                    )
+                })}
+
+
+
             </div>
-            <div className="checkout">
+            <div className={styles.checkout}>
                 <p>$100</p>
             </div>
         </div>
