@@ -1,13 +1,15 @@
 import styles from './navbar.module.css'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(){
 
     return(
         <header className={styles.header}>
-            <p>AllShop</p>
+            <Link to="/">
+                <p>AllShop</p>
+            </Link>
             <div className={styles['link-group']}>
-                <p>Items</p>
-                <p>Cart</p>
+                <Link to="/cart"><p>Cart</p></Link>
             </div>
 
         </header>

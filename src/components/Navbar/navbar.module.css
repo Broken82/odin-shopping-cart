@@ -10,6 +10,7 @@ header{
 p{
     font-size: 1.6rem;
     color: #f7f7f7;
+    
 }
 
 
@@ -23,8 +24,14 @@ p{
 
 }
 
-header > p, .link-group{
+header > a, .link-group a{
     margin-left: 70px;
     margin-right: 70px;
 }
+
+a{
+    text-decoration: none;
+}
+
+
 

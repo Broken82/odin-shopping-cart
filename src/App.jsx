@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar'
 import Card from './components/Card/Card'
 import './styles/reset.css'
 import './App.css'
+import { Outlet } from 'react-router-dom'
 
 
 
@@ -39,15 +40,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="card-wrapper">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
-
+      <Outlet context={[items, setItems]} />
     </>
   )
 }

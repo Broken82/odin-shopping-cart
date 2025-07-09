@@ -1,4 +1,6 @@
 import App from "./App";
+import Card from "./components/Card/Card";
+import Cart from "./components/Cart/Cart";
 
 
 
@@ -6,7 +8,11 @@ import App from "./App";
 const routes = [
     {
         path: "/",
-        element: <App />
+        element: <App />,
+        children: [
+            {path: "/", element: <Card />},
+            {path: "/cart", element: <Cart />},
+        ]
     }
 ]
 
