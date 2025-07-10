@@ -7,7 +7,7 @@ export default function Cart(){
         <div className={styles.cart}>
             <div className={styles['cart-list']}>
 
-                {items.map(item =>{
+                {items.filter(item => item.quantity > 0).map(item =>{
                     return(
                 <div className={styles['cart-item']}>
                     <img className={styles['img-cart']} src={item.image} alt={item.title} />
@@ -25,7 +25,7 @@ export default function Cart(){
 
             </div>
             <div className={styles.checkout}>
-                <p>$100</p>
+                <p>Sum: $100</p>
             </div>
         </div>
 

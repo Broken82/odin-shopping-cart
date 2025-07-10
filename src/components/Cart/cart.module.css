@@ -30,10 +30,21 @@
 }
 
 .checkout{
+    display: flex;
     flex: 1;
     background-color: #222222;
     margin: 90px;
     border-radius: 6px;
+    align-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    min-width: 250px;
+}
+
+.checkout p{
+    padding: 50px;
+
 }
 
 .title{
