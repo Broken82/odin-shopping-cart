@@ -12,6 +12,13 @@ function App() {
 
   const [items, setItems] = useState([])
 
+  const getItemCount = () => {
+    let count = 0
+    items.forEach(item => count += item.quantity)
+    console.log(count)
+    return count
+  }
+
   useEffect(() =>{
     const fetch = async () =>{
       try{
@@ -39,7 +46,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar itemCount={getItemCount}  />
       <Outlet context={[items, setItems]} />
     </>
   )

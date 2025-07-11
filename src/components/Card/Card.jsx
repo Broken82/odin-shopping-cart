@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function Card(){
 
-    // eslint-disable-next-line no-unused-vars
+
     const [items, setItems] = useOutletContext()
     const [quantity, setQuantity] = useState({})
 
@@ -13,7 +13,6 @@ export default function Card(){
             ...quantity,
             [id]: (quantity[id] || 0) + 1
         }
-        console.log(quantity)
 
         setQuantity(newQuantity)
     }
@@ -23,28 +22,30 @@ export default function Card(){
             ...quantity,
             [id]: (quantity[id] - 1 >= 0 ? quantity[id] - 1 : quantity[id] = 0)
         }
-        console.log(quantity)
+
         setQuantity(newQuantity)
     }
 
     const handleAdd = (id) => {
         const newItems = [...items]
-        newItems[id - 1].quantity += quantity[id]
+        newItems[id - 1].quantity += (quantity[id] || 0)
 
         const newQuantity = {
             ...quantity,
             [id] : 0
         }
 
-        console.log(newItems)
 
         setItems(newItems)
         setQuantity(newQuantity)
     }
- 
+    
+    console.log(items)
 
 
     return(
+
+
     
         
         
@@ -52,7 +53,7 @@ export default function Card(){
 
         {items.map(item => {
             return(
-                <div className={styles.card}>
+                <div key={item.id} className={styles.card}>
         
              <img src={item.image} alt="Item" /> 
             <p className={styles.price}>${item.price}</p>
